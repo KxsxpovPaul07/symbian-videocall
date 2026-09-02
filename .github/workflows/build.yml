@@ -15,7 +15,7 @@ jobs:
         run: |
           sudo dpkg --add-architecture i386
           sudo apt-get update
-          sudo apt-get install -y libc6:i386 libncurses5:i386 libstdc++6:i386 unzip p7zip-full
+          sudo apt-get install -y libc6:i386 libstdc++6:i386 unzip p7zip-full
 
       - name: Download toolchain and gnupoc
         run: |
