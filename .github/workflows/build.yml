@@ -33,7 +33,12 @@ jobs:
           chmod +x $GITHUB_WORKSPACE/compat-bin/g++
           export PATH=$GITHUB_WORKSPACE/compat-bin:$PATH
           sed -i 's/(foundPath > 0)/(foundPath != 0)/' gnupoc-package-1.22/tools/bmconv-1.1.0-2/src/pbmcomp.cpp
-          rm -rf gnupoc-package-1.22/tools/makesis-4
+                    mkdir -p gnupoc-package-1.22/tools/makesis-4/src
+          printf 'all:\n\t@true\n' > gnupoc-package-1.22/tools/makesis-4/Makefile
+          for f in makesis signsis makekeys; do
+            printf '#!/bin/sh\necho "STUB: $f not built yet (OpenSSL 3 incompatibility, to fix later)"\nexit 1\n' > gnupoc-package-1.22/tools/makesis-4/src/$f
+            chmod +x gnupoc-package-1.22/tools/makesis-4/src/$f
+          done
           cd gnupoc-package-1.22/tools
           ./install_eka2_tools $GITHUB_WORKSPACE/csl-gcc
 
