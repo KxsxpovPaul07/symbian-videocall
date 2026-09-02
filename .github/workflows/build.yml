@@ -34,6 +34,7 @@ jobs:
           export PATH=$GITHUB_WORKSPACE/compat-bin:$PATH
           sed -i 's/(foundPath > 0)/(foundPath != 0)/' gnupoc-package-1.22/tools/bmconv-1.1.0-2/src/pbmcomp.cpp
           cd gnupoc-package-1.22/tools
+          rm -rf gnupoc-package-1.22/tools/makesis-4
           ./install_eka2_tools $GITHUB_WORKSPACE/csl-gcc
 
       - name: Download S60 3rd Edition SDK
