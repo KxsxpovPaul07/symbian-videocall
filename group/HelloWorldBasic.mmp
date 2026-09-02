@@ -1,0 +1,10 @@
+TARGET          HelloWorldBasic.exe
+TARGETTYPE      exe
+UID             0x1000007A 0xE0000001
+
+SOURCEPATH      ../src
+SOURCE          HelloWorldBasic.cpp
+
+SYSTEMINCLUDE   /epoc32/include
+
+LIBRARY         euser.lib
